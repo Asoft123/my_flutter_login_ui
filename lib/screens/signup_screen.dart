@@ -3,12 +3,12 @@ import 'package:flutter/services.dart';
 import 'package:my_flutter_login_ui/utilities/constanst.dart';
 
 
-class LoginScreen extends StatefulWidget {
+class SignupScreen extends StatefulWidget {
  @override
- _LoginScreenState createState() => _LoginScreenState();
+ _SignupScreenState createState() => _SignupScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen>{
+class _SignupScreenState extends State<SignupScreen>{
    bool _rememberMe = false;
 
  //Email Widget
