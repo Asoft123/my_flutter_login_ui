@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_crazy/utilities/constanst.dart';
+import 'package:my_flutter_login_ui/utilities/constanst.dart';
 
 
 class LoginScreen extends StatefulWidget {
