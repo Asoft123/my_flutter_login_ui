@@ -12,6 +12,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Login UI',
       debugShowCheckedModeBanner: false,
       home: LoginScreen(),
+      routes: <String, WidgetBuilder>{
+        "/signup":(BuildContext context) => SignupScreen(),
+      }
     );
   }
 }

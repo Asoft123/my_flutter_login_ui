@@ -11,6 +11,77 @@ class SignupScreen extends StatefulWidget {
 class _SignupScreenState extends State<SignupScreen>{
    bool _rememberMe = false;
 
+ //Name Widget
+  Widget _buildFirstName(){
+   return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text(
+          'First Name',
+          style: kLabelStyle,
+        ),
+        SizedBox(height: 10.0),
+        Container(
+          alignment: Alignment.centerLeft,
+          decoration: kBoxDecorationStyle,
+          height: 60.0,
+          child: TextField(
+            keyboardType: TextInputType.emailAddress,
+            style: TextStyle(
+              color: Colors.white,
+              fontFamily: 'OpenSans',
+            ),
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(top: 14.0),
+              prefixIcon: Icon(
+                Icons.supervised_user_circle,
+                color: Colors.white,
+              ),
+              hintText: 'Enter your First Name',
+              hintStyle: kHintTextStyle,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+  Widget _buildLastName(){
+   return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text(
+          'Last Name',
+          style: kLabelStyle,
+        ),
+        SizedBox(height: 10.0),
+        Container(
+          alignment: Alignment.centerLeft,
+          decoration: kBoxDecorationStyle,
+          height: 60.0,
+          child: TextField(
+            keyboardType: TextInputType.emailAddress,
+            style: TextStyle(
+              color: Colors.white,
+              fontFamily: 'OpenSans',
+            ),
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(top: 14.0),
+              prefixIcon: Icon(
+                Icons.supervised_user_circle,
+                color: Colors.white,
+              ),
+              hintText: 'Enter your Last Name',
+              hintStyle: kHintTextStyle,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  //Password Widget
  //Email Widget
   Widget _buildEmailTF(){
    return Column(
@@ -117,7 +188,7 @@ class _SignupScreenState extends State<SignupScreen>{
               ),
             ),
             Text(
-              'Remember me',
+              'Accept terms & Conditions',
               style: kLabelStyle,
             ),
           ],
@@ -127,7 +198,7 @@ class _SignupScreenState extends State<SignupScreen>{
 
 
 // Button Widget
-  Widget _buildLoginBtn() {
+  Widget _buildSignupBtn1() {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 25.0),
       width: double.infinity,
@@ -140,7 +211,7 @@ class _SignupScreenState extends State<SignupScreen>{
         ),
         color: Colors.white,
         child: Text(
-          'LOGIN',
+          'CREATE ACCOUNT',
           style: TextStyle(
             color: Color(0xFF527DAA),
             letterSpacing: 1.5,
@@ -221,20 +292,21 @@ class _SignupScreenState extends State<SignupScreen>{
 
   Widget _buildSignupBtn() {
     return GestureDetector(
-      onTap: () => print('Sign Up Button Pressed'),
+      onTap: () => Navigator.of(context).pushNamed("/"),
       child: RichText(
         text: TextSpan(
           children: [
             TextSpan(
-              text: 'Don\'t have an Account? ',
+              text: 'Already Signed Up? ',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 18.0,
                 fontWeight: FontWeight.w400,
               ),
             ),
+            
             TextSpan(
-              text: 'Sign Up',
+              text: 'Login',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 18.0,
@@ -280,7 +352,7 @@ class _SignupScreenState extends State<SignupScreen>{
                                               child: Column(
                                                 mainAxisAlignment: MainAxisAlignment.center,
                                                 children: <Widget>[
-                                                  Text("Sign in",
+                                                  Text("Sign Up",
                                                   style: TextStyle(
                                                     color:Colors.white,
                                                     fontFamily: "OpenSans",
@@ -289,14 +361,18 @@ class _SignupScreenState extends State<SignupScreen>{
                                                   ),
                                                   ),
                                                   SizedBox(height:30.0),
+                                                    _buildFirstName(),
+                                                  SizedBox(height:30.0),
+                                                    _buildLastName(),
+                                                  SizedBox(height:30.0),
                                                     _buildEmailTF(),
                                                   SizedBox(height:30.0),
                                                     _buildPasswordTF(),
-                                                    _buildForgotPasswordBtn(),
+                                                  SizedBox(height:20.0),
                                                     _buildRememberMeCheckbox(),
-                                                    _buildLoginBtn(),
-                                                    _buildSignInWithText(),
-                                                    _buildSocialBtnRow(),
+                                                    _buildSignupBtn1(),
+                                                   
+                                                    
                                                     _buildSignupBtn(),
                                                   
                                                 ],
